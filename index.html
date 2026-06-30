@@ -345,26 +345,6 @@
     padding:9px 15px;border-radius:10px;text-decoration:none;font-family:var(--disp);font-weight:600;font-size:13px;
     background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04111c}
   .dl:hover{filter:brightness(1.08)}
-
-  /* ───── Reading Library (external links) ───── */
-  .gradeblock{margin-top:8px}
-  .gradehead{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:34px 0 2px}
-  .gradeblock:first-child .gradehead{margin-top:6px}
-  .rlist{margin:6px 0 4px}
-  .ritem{display:flex;align-items:center;gap:12px;padding:10px 14px;margin-bottom:8px;border-radius:12px;
-    border:1px solid var(--line-soft);background:rgba(20,11,46,.4)}
-  .ritem .rt{flex:1;min-width:0}
-  .ritem .rt b{display:block;font-family:var(--disp);font-weight:600;font-size:13.5px;color:var(--star)}
-  .ritem .rt span{font-size:11px;color:var(--mute-2)}
-  .rstat{flex:0 0 auto;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
-  .rstat.free{color:var(--green);border:1px solid rgba(78,219,122,.4)}
-  .rstat.alt{color:var(--cyan-soft);border:1px solid var(--line)}
-  .rstat.miss{color:var(--mute-2);border:1px solid var(--line-soft)}
-  .rlink{flex:0 0 auto;padding:7px 13px;border-radius:9px;text-decoration:none;font-family:var(--disp);font-weight:600;font-size:12.5px;
-    background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04111c}
-  .rlink:hover{filter:brightness(1.08)}
-  .rmiss{flex:0 0 auto;font-size:11px;color:var(--mute-2);font-style:italic;padding-right:4px}
-  @media(max-width:560px){.ritem{flex-wrap:wrap}.ritem .rt{flex:1 0 100%}}
 </style>
 
 <div class="shell">
@@ -398,7 +378,6 @@
 
     <div class="navlabel">Resources</div>
     <button class="navbtn" data-view="downloads"><span class="dot"></span> Curriculum Downloads</button>
-    <button class="navbtn" data-view="library"><span class="dot"></span> Reading Library · 4–5</button>
     <button class="navbtn" data-view="rentals"><span class="dot"></span> Gear Locker</button>
   </aside>
 
@@ -1683,183 +1662,91 @@ const RENTALS = {
   ],
   insured:"Every Strive rental is insured. Accidental damage on any device or tool is covered, so students can learn, experiment, and build without fear of breaking expensive equipment. Loss and negligence terms are spelled out in the simple rental agreement signed at enrollment.",
 };
-/* ---------------------- READING LIBRARY (external, lawful free links) --------- */
-/* Sourced from the Grade 4–5 resource link audit. FREE = verified lawful free copy.  */
-/* "miss" = commercial or unverified — intentionally NOT linked, per legal standard.  */
-const LIBRARY = {
-  "Grade 4": {
-    "Vocabulary, Grammar & Writing":[
-      {t:"Wordly Wise 3000, Book 4",by:"Hodkinson / Adams",st:"miss"},
-      {t:"The Shurley Method, Level 4",by:"Shurley / Wetsell",st:"miss"},
-      {t:"Writing & Rhetoric, Book 3: Narrative II",by:"Paul Kortepeter",st:"miss"},
-    ],
-    "History · Core Knowledge":[
-      {t:"Map Skills",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/02/CKHG_OnlineResources-Using-Maps.pdf"},
-      {t:"World Mountains",by:"Core Knowledge · shared with Map Skills",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/02/CKHG_OnlineResources-Using-Maps.pdf"},
-      {t:"Medieval Europe",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2022/06/CKHG-G4U3_OnlineResources_Medieval-Europe_W1.pdf"},
-      {t:"Medieval Islamic Empires",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/03/CKHG-Online-Resources-Islamic-Empires_W1.pdf"},
-      {t:"Early & Medieval African Kingdoms",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/03/CKHG_G4_U4-Online-Resources-Early-Islamic-Civilization-and-African-Kingdoms_W1.pdf"},
-      {t:"Dynasties of China",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/03/CKHG_G4_U6-Online-Resources-Dynasties-of-China_W1.pdf"},
-      {t:"Early Russia & Feudal Japan",by:"Core Knowledge · cross-grade match",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2023/02/CKHG-G5_U7-8_Online-Resources-Czars-and-Shoguns_W1.pdf"},
-      {t:"The American Revolution",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/02/CKHG_G4_U7-OnlineResources_American-Revolution_W1.pdf"},
-      {t:"The U.S. Constitution",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/08/CKHG_G4_U8-Online-Resources-The-United-States-Constitution_W1.pdf"},
-      {t:"Early Presidents",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG_G4_U9-EarlyPresidents_W1.pdf"},
-      {t:"American Reformers",by:"Core Knowledge · in Early Presidents unit",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG_G4_U9-EarlyPresidents_W1.pdf"},
-    ],
-    "Science · Core Knowledge":[
-      {t:"Geology, Rocks, Minerals & Fossils",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/09/CKSci_G4U4_EarthProcesses_OnlineResources_W1.pdf"},
-      {t:"Energy",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/01/CKSci_G4U1_Energy-Transfer-and-Transformation_Online_Resources_W1.pdf"},
-      {t:"Waves",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/08/CKSci_G4U2_InvestigatingWaves_OnlineResources_W1.pdf"},
-      {t:"Animals & Biomes",by:"Core Knowledge · cross-grade match",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/08/CKSci_G4U3_StructureFunction_OnlineResources_W1.pdf"},
-      {t:"Natural Resources for Energy",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/09/CKSci_G4U5_EnergyResources_OnlineResources_W1.pdf"},
-      {t:"Circulatory & Respiratory Systems",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2021/06/CKSci_G4U6_ORG_W1.pdf"},
-      {t:"Sky Patterns",by:"Core Knowledge · cross-grade match",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/09/G5Sci-U5_Astronomy_OnlineResources_W1.pdf"},
-    ],
-    "Literature":[
-      {t:"Pollyanna",by:"Eleanor H. Porter",st:"free",url:"https://www.gutenberg.org/ebooks/1450"},
-      {t:"Robinson Crusoe",by:"Daniel Defoe",st:"free",url:"https://www.gutenberg.org/ebooks/521"},
-      {t:"Treasure Island",by:"Robert Louis Stevenson",st:"free",url:"https://www.gutenberg.org/ebooks/120"},
-      {t:"The Fire on the Mountain",by:"Core Knowledge excerpt",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/03/CKHG_G4_U4-Online-Resources-Early-Islamic-Civilization-and-African-Kingdoms_W1.pdf"},
-      {t:"The Legend of Sleepy Hollow",by:"Washington Irving",st:"free",url:"https://www.gutenberg.org/ebooks/41"},
-      {t:"Robin Hood",by:"McSpadden (assigned ed.)",st:"miss"},
-      {t:"The Phantom Tollbooth",by:"Norton Juster",st:"miss"},
-      {t:"King Arthur",by:"Hadfield",st:"miss"},
-      {t:"The Wonderful Chuang Brocade",by:"folktale",st:"miss"},
-      {t:"Saint George & the Dragon",by:"legend / adaptation",st:"miss"},
-      {t:"Rip Van Winkle",by:"Washington Irving",st:"miss"},
-    ],
-    "Poetry":[
-      {t:"Dreams",by:"Langston Hughes · by permission",st:"free",url:"https://poets.org/poem/dreams"},
-      {t:"Paul Revere's Ride",by:"Henry Wadsworth Longfellow",st:"free",url:"https://poets.org/poem/paul-reveres-ride"},
-      {t:"Concord Hymn",by:"Ralph Waldo Emerson",st:"free",url:"https://poets.org/poem/concord-hymn"},
-      {t:"Monday's Child",by:"traditional",st:"miss"},
-      {t:"Humanity",by:"Elma Stuckey",st:"miss"},
-      {t:"Fog",by:"Carl Sandburg",st:"miss"},
-      {t:"Clouds",by:"Christina Rossetti",st:"miss"},
-      {t:"The Drum",by:"Nikki Giovanni",st:"miss"},
-      {t:"Things",by:"Eloise Greenfield",st:"miss"},
-      {t:"Afternoon on a Hill",by:"Edna St. Vincent Millay",st:"miss"},
-      {t:"The Rhinoceros",by:"Ogden Nash",st:"miss"},
-      {t:"The Pobble Who Has No Toes",by:"Edward Lear",st:"miss"},
-      {t:"A Tragic Story",by:"William M. Thackeray",st:"miss"},
-      {t:"Clarence",by:"Shel Silverstein",st:"miss"},
-      {t:"George Washington",by:"Rosemary & Stephen Vincent Benét",st:"miss"},
-    ],
-    "Reasoning & Other":[
-      {t:"The Tuttle Twins and the Miraculous Pencil",by:"Connor Boyack",st:"miss"},
-      {t:"Building Thinking Skills, Grade 4",by:"Evan-Moor / Parks",st:"miss"},
-    ],
-  },
-  "Grade 5": {
-    "Vocabulary, Grammar & Writing":[
-      {t:"Wordly Wise 3000, Book 5",by:"Hodkinson / Adams",st:"miss"},
-      {t:"The Shurley Method, Level 5",by:"Shurley / Wetsell",st:"miss"},
-      {t:"Writing & Rhetoric, Book 5: Commonplace",by:"Paul Kortepeter",st:"miss"},
-    ],
-    "History · Core Knowledge":[
-      {t:"Maya, Aztec & Inca Civilizations",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/02/CKHG_G5-U2_Maya-Inca_Aztec_W1.pdf"},
-      {t:"The Age of Exploration",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2023/01/CKHG_OnlineResources_Age-of-Exploration.pdf"},
-      {t:"From Renaissance to England's Golden Age",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/08/CKHG_G5_U4-5-6-Online-Resources-Renaissance-Englands-Golden-Age_W1.pdf"},
-      {t:"Early Russia & Feudal Japan",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2023/02/CKHG-G5_U7-8_Online-Resources-Czars-and-Shoguns_W1.pdf"},
-      {t:"World Lakes",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/02/CKHG_OnlineResources_World-Lakes.pdf"},
-      {t:"Geography of the United States",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/07/CKHG_G5_U9-Online-Resources-US-Geography_W1.pdf"},
-      {t:"Westward Expansion Before the Civil War",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/08/CKHG_G5_U10-Online-Resources-Westward-Expansion-Before-the-Civil-War_W1.pdf"},
-      {t:"The Civil War",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/08/CKHG_G5_U11-Online-Resources-The-Civil-War-U11_W1.pdf"},
-      {t:"Native Americans & Westward Expansion",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
-      {t:"Understanding Economics",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2024/01/CKHG_G5U14_ORG_Web_W1.pdf"},
-    ],
-    "Science · Core Knowledge":[
-      {t:"Matter & Chemistry",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/07/CKSci_G5U1_Investigating-Matter_Online_Resources_W1.pdf"},
-      {t:"Plants, Classification & Cycling of Matter",by:"Core Knowledge · cross-grade match",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2020/01/CKSci_G5_U2_Ecosystems_OnlineResources_W1.pdf"},
-      {t:"Earth's Spheres",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/08/G5Sci-U3_EarthSystems_Online-Resources_W1.pdf"},
-      {t:"Astronomy & Space Systems",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/09/G5Sci-U5_Astronomy_OnlineResources_W1.pdf"},
-      {t:"Endocrine System",by:"Core Knowledge",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2021/06/CKSci_G5U6_ORG_W1.pdf"},
-      {t:"Cells",by:"Core Knowledge · cross-grade match",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2019/08/CKSci_G4U3_StructureFunction_OnlineResources_W1.pdf"},
-    ],
-    "Literature":[
-      {t:"Selected Adventures of Sherlock Holmes",by:"Arthur Conan Doyle",st:"free",url:"https://www.gutenberg.org/ebooks/1661"},
-      {t:"Don Quixote",by:"Miguel de Cervantes · original text",st:"alt",url:"https://www.gutenberg.org/ebooks/996"},
-      {t:"A Midsummer Night's Dream",by:"William Shakespeare · Folger",st:"free",url:"https://www.folger.edu/explore/shakespeares-works/a-midsummer-nights-dream/read/"},
-      {t:"Autobiography of Frederick Douglass",by:"Frederick Douglass",st:"free",url:"https://www.gutenberg.org/ebooks/23"},
-      {t:"The Secret Garden",by:"Frances Hodgson Burnett",st:"free",url:"https://www.gutenberg.org/ebooks/113"},
-      {t:"The Adventures of Tom Sawyer",by:"Mark Twain",st:"free",url:"https://www.gutenberg.org/ebooks/74"},
-      {t:"Little Women",by:"Louisa May Alcott",st:"free",url:"https://www.gutenberg.org/ebooks/514"},
-      {t:"The Sun Dance",by:"Core Knowledge excerpt",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
-      {t:"Coyote Goes to the Land of the Dead",by:"Core Knowledge excerpt",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
-      {t:"Caddie Woodlawn",by:"Carol Ryrie Brink",st:"miss"},
-      {t:"Freedom Crossing",by:"Margaret Goff Clark",st:"miss"},
-      {t:"The Lion, the Witch & the Wardrobe",by:"C. S. Lewis",st:"miss"},
-      {t:"The Samurai's Daughter",by:"anthology item",st:"miss"},
-    ],
-    "Poetry & Speeches":[
-      {t:"A Bird came down the Walk",by:"Emily Dickinson",st:"free",url:"https://poets.org/poem/bird-came-down-walk-328"},
-      {t:"The Battle Hymn of the Republic",by:"Julia Ward Howe",st:"free",url:"https://poets.org/poem/battle-hymn-republic"},
-      {t:"A Poison Tree",by:"William Blake",st:"free",url:"https://poets.org/poem/poison-tree"},
-      {t:"The Tyger",by:"William Blake",st:"free",url:"https://poets.org/poem/tyger"},
-      {t:"Casey at the Bat",by:"Ernest Lawrence Thayer",st:"free",url:"https://poets.org/poem/casey-bat"},
-      {t:"Barbara Frietchie",by:"John Greenleaf Whittier",st:"free",url:"https://poets.org/poem/barbara-frietchie"},
-      {t:"I Will Fight No More Forever",by:"Chief Joseph · CK excerpt",st:"free",url:"https://www.coreknowledge.org/wp-content/uploads/2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
-      {t:"I, Too",by:"Langston Hughes · by permission",st:"free",url:"https://poets.org/poem/i-too"},
-      {t:"O Captain! My Captain!",by:"Walt Whitman",st:"free",url:"https://poets.org/poem/o-captain-my-captain"},
-      {t:"The Road Not Taken",by:"Robert Frost · respect rights",st:"free",url:"https://poets.org/poem/road-not-taken"},
-      {t:"Gettysburg Address",by:"Abraham Lincoln",st:"miss"},
-      {t:"Incident",by:"Countee Cullen",st:"miss"},
-      {t:"Some Opposites",by:"Richard Wilbur",st:"miss"},
-      {t:"The Snow Storm",by:"Ralph Waldo Emerson",st:"miss"},
-      {t:"Builders",by:"assigned version unclear",st:"miss"},
-      {t:"I Hear America Singing",by:"Walt Whitman",st:"miss"},
-      {t:"Jabberwocky",by:"Lewis Carroll",st:"miss"},
-      {t:"The Arrow and the Song",by:"Henry Wadsworth Longfellow",st:"miss"},
-      {t:"A Wise Old Owl",by:"traditional",st:"miss"},
-      {t:"I Like to See it Lap the Miles",by:"Emily Dickinson",st:"miss"},
-      {t:"Narcissa",by:"Gwendolyn Brooks",st:"miss"},
-      {t:"The Eagle",by:"Alfred, Lord Tennyson",st:"miss"},
-    ],
-    "Reasoning & Other":[
-      {t:"The Tuttle Twins and Their Spectacular Show Business",by:"Connor Boyack",st:"miss"},
-      {t:"Building Thinking Skills, Grade 5",by:"Evan-Moor / Parks",st:"miss"},
-    ],
-  },
-};
-function libStatPill(st){
-  const m={free:["free","Free"],alt:["alt","Free · alt ed."],miss:["miss","Add later"]};
-  const x=m[st]||m.free; return `<span class="rstat ${x[0]}">${x[1]}</span>`;
-}
-function libAction(it){
-  if(it.st==="miss") return `<span class="rmiss">Not yet available</span>`;
-  const isPdf = /coreknowledge\.org/.test(it.url) || /\.pdf(\?|$)/i.test(it.url);
-  return `<a class="rlink" href="${it.url}" target="_blank" rel="noopener">${isPdf?"Download ↗":"Read ↗"}</a>`;
-}
-function renderLibrary(){
-  let free=0, miss=0;
-  Object.values(LIBRARY).forEach(g=>Object.values(g).forEach(arr=>arr.forEach(it=>{ it.st==="miss"?miss++:free++; })));
-  const grades = Object.keys(LIBRARY).map(gk=>{
-    const cats = Object.keys(LIBRARY[gk]).map(ck=>{
-      const rows = LIBRARY[gk][ck].map(it=>`
-        <div class="ritem">
-          <div class="rt"><b>${it.t}</b><span>${it.by}</span></div>
-          ${libStatPill(it.st)}
-          ${libAction(it)}
-        </div>`).join("");
-      return `<div class="sec-label"><span class="num">✦</span><h2>${ck}</h2><span class="rule"></span></div><div class="rlist">${rows}</div>`;
-    }).join("");
-    return `<div class="gradeblock"><div class="gradehead">${gk}</div>${cats}</div>`;
-  }).join("");
-  main.innerHTML = `<div class="fade">
-    <header class="hero">
-      <p class="eyebrow">Resources · Reading Library</p>
-      <h1>Reading Library · Grades 4–5<span class="sub">Verified, lawful, free copies of the assigned readings and unit texts — links open on the source site (Core Knowledge, Project Gutenberg, Folger, Poets.org).</span></h1>
-      <div class="stats">
-        <div class="stat"><b>${free}</b><span>Free verified links</span></div>
-        <div class="stat"><b>4–5</b><span>Grades covered</span></div>
-        <div class="stat"><b>4</b><span>Trusted sources</span></div>
-        <div class="stat"><b>${miss}</b><span>Awaiting a lawful copy</span></div>
-      </div>
-    </header>
-    <div class="support" style="margin-top:6px"><span class="ic">✦</span><div><b>How to read the tags.</b><p><strong>Free</strong> links open a verified lawful copy on a trusted site. <strong>Free · alt ed.</strong> is the public-domain original rather than the exact assigned edition. <strong>Add later</strong> items are commercial or unverified — we intentionally don't link those until a lawful free copy is confirmed.</p></div></div>
-    ${grades}
-    <footer><div class="l"><span class="s">✦</span> Lawful, free, and stable</div><div class="r">Strive Academy · Reading Library</div></footer>
-  </div>`;
+/* ---------------------- VERIFIED FREE RESOURCE LINKS (Grades 4–5) ------------- */
+/* Maps a curriculum item (by keyword in its title) to a verified, lawful free copy. */
+/* openResourceModal() uses these so clicking the item opens the real source.        */
+/* Sourced from the Grade 4–5 link audit; commercial/unverified items are omitted    */
+/* (they keep the default "available from Core Knowledge / find a copy" behavior).    */
+const _CKWP = "https://www.coreknowledge.org/wp-content/uploads/";
+const VERIFIED_LINKS = [
+  /* Grade 4 · History (Core Knowledge unit PDFs) */
+  {k:"map skills", u:_CKWP+"2017/02/CKHG_OnlineResources-Using-Maps.pdf"},
+  {k:"world mountains", u:_CKWP+"2017/02/CKHG_OnlineResources-Using-Maps.pdf"},
+  {k:"medieval europe", u:_CKWP+"2022/06/CKHG-G4U3_OnlineResources_Medieval-Europe_W1.pdf"},
+  {k:"medieval islamic", u:_CKWP+"2017/03/CKHG-Online-Resources-Islamic-Empires_W1.pdf"},
+  {k:"african kingdoms", u:_CKWP+"2017/03/CKHG_G4_U4-Online-Resources-Early-Islamic-Civilization-and-African-Kingdoms_W1.pdf"},
+  {k:"dynasties of china", u:_CKWP+"2017/03/CKHG_G4_U6-Online-Resources-Dynasties-of-China_W1.pdf"},
+  {k:"american revolution", u:_CKWP+"2017/02/CKHG_G4_U7-OnlineResources_American-Revolution_W1.pdf"},
+  {k:"u.s. constitution", u:_CKWP+"2017/08/CKHG_G4_U8-Online-Resources-The-United-States-Constitution_W1.pdf"},
+  {k:"early presidents", u:_CKWP+"2017/09/CKHG_G4_U9-EarlyPresidents_W1.pdf"},
+  {k:"american reformers", u:_CKWP+"2017/09/CKHG_G4_U9-EarlyPresidents_W1.pdf"},
+  /* Grade 4 · Science (CKSci unit PDFs) */
+  {k:"geology", u:_CKWP+"2019/09/CKSci_G4U4_EarthProcesses_OnlineResources_W1.pdf"},
+  {k:"rocks & minerals", u:_CKWP+"2019/09/CKSci_G4U4_EarthProcesses_OnlineResources_W1.pdf"},
+  {k:"fossils", u:_CKWP+"2019/09/CKSci_G4U4_EarthProcesses_OnlineResources_W1.pdf"},
+  {k:"energy", u:_CKWP+"2019/01/CKSci_G4U1_Energy-Transfer-and-Transformation_Online_Resources_W1.pdf"},
+  {k:"waves", u:_CKWP+"2019/08/CKSci_G4U2_InvestigatingWaves_OnlineResources_W1.pdf"},
+  {k:"animals & biomes", u:_CKWP+"2019/08/CKSci_G4U3_StructureFunction_OnlineResources_W1.pdf"},
+  {k:"sky patterns", u:_CKWP+"2019/09/G5Sci-U5_Astronomy_OnlineResources_W1.pdf"},
+  {k:"circulatory", u:_CKWP+"2021/06/CKSci_G4U6_ORG_W1.pdf"},
+  {k:"respiratory", u:_CKWP+"2021/06/CKSci_G4U6_ORG_W1.pdf"},
+  /* Grade 4 · Literature (Project Gutenberg + CK excerpt) */
+  {k:"pollyanna", u:"https://www.gutenberg.org/ebooks/1450"},
+  {k:"robinson crusoe", u:"https://www.gutenberg.org/ebooks/521"},
+  {k:"treasure island", u:"https://www.gutenberg.org/ebooks/120"},
+  {k:"fire on the mountain", u:_CKWP+"2017/03/CKHG_G4_U4-Online-Resources-Early-Islamic-Civilization-and-African-Kingdoms_W1.pdf"},
+  {k:"sleepy hollow", u:"https://www.gutenberg.org/ebooks/41"},
+  /* Grade 4 · Poems (Poets.org) */
+  {k:"dreams", u:"https://poets.org/poem/dreams"},
+  {k:"paul revere", u:"https://poets.org/poem/paul-reveres-ride"},
+  {k:"concord hymn", u:"https://poets.org/poem/concord-hymn"},
+  /* Grade 5 · History & Geography (Core Knowledge unit PDFs) */
+  {k:"maya", u:_CKWP+"2017/02/CKHG_G5-U2_Maya-Inca_Aztec_W1.pdf"},
+  {k:"age of exploration", u:_CKWP+"2023/01/CKHG_OnlineResources_Age-of-Exploration.pdf"},
+  {k:"renaissance", u:_CKWP+"2017/08/CKHG_G5_U4-5-6-Online-Resources-Renaissance-Englands-Golden-Age_W1.pdf"},
+  {k:"shoguns", u:_CKWP+"2023/02/CKHG-G5_U7-8_Online-Resources-Czars-and-Shoguns_W1.pdf"},
+  {k:"westward expansion before", u:_CKWP+"2017/08/CKHG_G5_U10-Online-Resources-Westward-Expansion-Before-the-Civil-War_W1.pdf"},
+  {k:"the civil war", u:_CKWP+"2017/08/CKHG_G5_U11-Online-Resources-The-Civil-War-U11_W1.pdf"},
+  {k:"native americans", u:_CKWP+"2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
+  {k:"world lakes", u:_CKWP+"2017/02/CKHG_OnlineResources_World-Lakes.pdf"},
+  {k:"geography of the united states", u:_CKWP+"2017/07/CKHG_G5_U9-Online-Resources-US-Geography_W1.pdf"},
+  /* Grade 5 · Science (CKSci unit PDFs) — order: specific before generic "matter" */
+  {k:"cycling of matter", u:_CKWP+"2020/01/CKSci_G5_U2_Ecosystems_OnlineResources_W1.pdf"},
+  {k:"classification", u:_CKWP+"2020/01/CKSci_G5_U2_Ecosystems_OnlineResources_W1.pdf"},
+  {k:"plants", u:_CKWP+"2020/01/CKSci_G5_U2_Ecosystems_OnlineResources_W1.pdf"},
+  {k:"endocrine", u:_CKWP+"2021/06/CKSci_G5U6_ORG_W1.pdf"},
+  {k:"earth's spheres", u:_CKWP+"2019/08/G5Sci-U3_EarthSystems_Online-Resources_W1.pdf"},
+  {k:"cells", u:_CKWP+"2019/08/CKSci_G4U3_StructureFunction_OnlineResources_W1.pdf"},
+  {k:"chemistry", u:_CKWP+"2019/07/CKSci_G5U1_Investigating-Matter_Online_Resources_W1.pdf"},
+  {k:"matter", u:_CKWP+"2019/07/CKSci_G5U1_Investigating-Matter_Online_Resources_W1.pdf"},
+  /* Grade 5 · Literature (Project Gutenberg, Folger, CK excerpt) */
+  {k:"sherlock holmes", u:"https://www.gutenberg.org/ebooks/1661"},
+  {k:"don quixote", u:"https://www.gutenberg.org/ebooks/996"},
+  {k:"midsummer", u:"https://www.folger.edu/explore/shakespeares-works/a-midsummer-nights-dream/read/"},
+  {k:"frederick douglass", u:"https://www.gutenberg.org/ebooks/23"},
+  {k:"secret garden", u:"https://www.gutenberg.org/ebooks/113"},
+  {k:"tom sawyer", u:"https://www.gutenberg.org/ebooks/74"},
+  {k:"little women", u:"https://www.gutenberg.org/ebooks/514"},
+  {k:"the sun dance", u:_CKWP+"2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
+  {k:"coyote goes", u:_CKWP+"2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
+  /* Grade 5 · Poems & Speeches (Poets.org + CK excerpt) */
+  {k:"bird came down", u:"https://poets.org/poem/bird-came-down-walk-328"},
+  {k:"battle hymn", u:"https://poets.org/poem/battle-hymn-republic"},
+  {k:"a poison tree", u:"https://poets.org/poem/poison-tree"},
+  {k:"the tyger", u:"https://poets.org/poem/tyger"},
+  {k:"casey at the bat", u:"https://poets.org/poem/casey-bat"},
+  {k:"barbara frietchie", u:"https://poets.org/poem/barbara-frietchie"},
+  {k:"i will fight no more", u:_CKWP+"2017/09/CKHG-Native-Americans-and-Westward-Expansion_Online-Resources.pdf"},
+  {k:"i, too", u:"https://poets.org/poem/i-too"},
+  {k:"o captain", u:"https://poets.org/poem/o-captain-my-captain"},
+  {k:"the road not taken", u:"https://poets.org/poem/road-not-taken"},
+];
+function verifiedLink(title){
+  const t = (title||"").toLowerCase();
+  const hit = VERIFIED_LINKS.find(r => t.includes(r.k));
+  if(!hit) return null;
+  const isPdf = /coreknowledge\.org/.test(hit.u) || /\.pdf(\?|$)/i.test(hit.u);
+  return { url:hit.u, isPdf, label: isPdf ? "Download the free unit PDF ↗" : "Read it free ↗" };
 }
 
 /* ---------------------- DOWNLOADS ------------------------------ */
@@ -1979,7 +1866,6 @@ function go(view, arg){
   else if(view==="clubs"){ document.querySelector('[data-view="clubs"]').setAttribute('aria-current','true'); renderClubs(); }
   else if(view==="rentals"){ document.querySelector('[data-view="rentals"]').setAttribute('aria-current','true'); renderRentals(); }
   else if(view==="downloads"){ document.querySelector('[data-view="downloads"]').setAttribute('aria-current','true'); renderDownloads(); }
-  else if(view==="library"){ document.querySelector('[data-view="library"]').setAttribute('aria-current','true'); renderLibrary(); }
   else if(view==="grade"){ const el=document.querySelector(`[data-grade="${arg}"]`); if(el)el.setAttribute('aria-current','true'); if(LEVEL==="secondary"){renderSecondaryGrade(Number(arg));mode="secondary";}else{renderGrade(arg);mode="grade";} }
   else if(view==="dept"){ const el=document.querySelector(`[data-dept="${arg}"]`); if(el)el.setAttribute('aria-current','true'); renderDept(arg); mode="dept"; }
   main.setAttribute("data-mode",mode);
@@ -2045,8 +1931,9 @@ function openResourceModal(el){
   if(poem){
     const pm = findPoem(title);
     const credit = author || (pm && pm.by) || "";
-    const src = (pm && pm.link) || `https://www.poetryfoundation.org/search?query=${encodeURIComponent((title+" "+credit).trim())}`;
-    const readLink = `<div class="links"><a href="${src}" target="_blank" rel="noopener">Read the full poem ↗</a></div>`;
+    const _v = verifiedLink(title);
+    const src = (_v && _v.url) || (pm && pm.link) || `https://www.poetryfoundation.org/search?query=${encodeURIComponent((title+" "+credit).trim())}`;
+    const readLink = `<div class="links"><a href="${src}" target="_blank" rel="noopener">${(_v&&_v.isPdf)?"Read the official text (PDF) ↗":"Read the full poem ↗"}</a></div>`;
     if(pm && pm.text){
       openModal(`<span class="kind poem">Poem</span><h3>${title}</h3>
         ${credit?`<div class="meta"><div><b>By</b> · ${credit}</div></div>`:""}
@@ -2066,10 +1953,16 @@ function openResourceModal(el){
   else if(saying){ kindLabel="Saying & Phrase"; desc=`A familiar saying taught from the Sayings &amp; Phrases section of <em>${CK_BOOK}</em>.`; }
   else if(lit){ kindLabel="Literature"; desc=`A story or work studied in class, collected in <em>${CK_BOOK}</em>. Read-aloud texts are available free from Core Knowledge.`; }
   else { desc=`A Core Knowledge unit from <em>${CK_BOOK}</em>. The full unit — teaching materials, timeline cards, and online resources — can be downloaded free from Core Knowledge.`; }
+  const v = verifiedLink(title);
+  if(v){
+    desc = v.isPdf
+      ? `The complete, free official resource is available to download below — also collected in <em>${CK_BOOK}</em>.`
+      : `A free, lawful copy of this text is available to read at the linked source below.`;
+  }
   openModal(`<span class="kind ${kindCls}">${kindLabel}</span><h3>${title}</h3>
     ${author?`<div class="meta"><div><b>By</b> · ${author}</div></div>`:""}
     <p class="desc">${desc}</p>
-    <div class="links">${ckLink()}</div>`);
+    <div class="links">${ v ? `<a href="${v.url}" target="_blank" rel="noopener">${v.label}</a>` : ckLink() }</div>`);
 }
 
 function openCourseModal(el){

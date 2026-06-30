@@ -17,14 +17,19 @@ Strive Academy program and **download the full curriculum**.
 
 Open the dashboard and visit **Resources → Curriculum Downloads** to grab any file.
 
-### Reading Library (Grades 4–5)
+### Verified free resource links (Grades 4–5)
 
-**Resources → Reading Library · 4–5** lists the assigned readings and unit texts
-with links to **verified, lawful, free** copies on trusted sites (Core Knowledge,
-Project Gutenberg, Folger, Poets.org). These links open on the source site — Strive
-does not re-host them. Items tagged **"Add later"** are commercial or unverified and
-are intentionally **not** linked until a lawful free copy is confirmed. The data
-lives in the `LIBRARY` object in `index.html`. Sourced from a Grade 4–5 link audit.
+The Grade 4 and Grade 5 curriculum pages already list every assigned reading and
+unit text as a clickable item. Clicking one opens its resource pop-up — and for
+grades 4–5 those pop-ups now link straight to a **verified, lawful, free** copy on
+the source site (Core Knowledge unit PDFs, Project Gutenberg, Folger, Poets.org)
+instead of the generic Core Knowledge homepage. Commercial/unverified items
+(e.g. Wordly Wise, Phantom Tollbooth) keep the default "find a copy" behavior —
+they are intentionally **not** linked until a lawful free copy is confirmed.
+
+The mapping lives in the `VERIFIED_LINKS` array in `index.html` (keyed by a keyword
+in the item title) and is applied by `verifiedLink()` inside `openResourceModal()`.
+Sourced from a Grade 4–5 link audit.
 
 > Links to third-party sites can rot. Re-check them periodically; a dead link just
 > 404s on the source site, it won't break the dashboard.
