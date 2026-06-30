@@ -52,9 +52,21 @@ instead of the generic Core Knowledge homepage. Commercial/unverified items
 (e.g. Wordly Wise, Phantom Tollbooth) keep the default "find a copy" behavior —
 they are intentionally **not** linked until a lawful free copy is confirmed.
 
-The mapping lives in the `VERIFIED_LINKS` array in `index.html` (keyed by a keyword
-in the item title) and is applied by `verifiedLink()` inside `openResourceModal()`.
-Sourced from a Grade 4–5 link audit.
+**Adding your own links to any poem or book.** Near the top of the script in
+`index.html` there's a big banner comment and a `const LINKS = [ … ]` table listing
+**every poem and book on the K–6 curriculum pages** (236 items). To add a link, find
+the title and paste a URL between the quotes:
+
+```js
+{t:"Treasure Island", url:""}   →   {t:"Treasure Island", url:"https://www.gutenberg.org/ebooks/120"}
+```
+
+Leave `url:""` to keep the default (no link button). When a student clicks that
+poem/book on its grade page, the pop-up shows a **"Read it ↗"** button to your link.
+Matching is by exact title, so it never mis-links (e.g. the poem *"It May Not Matter"*
+won't grab the science *Matter* unit). The grade 4–5 history/science **unit** links
+still come from the `VERIFIED_LINKS` keyword table; both are applied by
+`verifiedLink()` inside `openResourceModal()`. Sourced from a Grade 4–5 link audit.
 
 > Links to third-party sites can rot. Re-check them periodically; a dead link just
 > 404s on the source site, it won't break the dashboard.
