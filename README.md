@@ -17,6 +17,18 @@ Strive Academy program and **download the full curriculum**.
 
 Open the dashboard and visit **Resources → Curriculum Downloads** to grab any file.
 
+### Reading Library (Grades 4–5)
+
+**Resources → Reading Library · 4–5** lists the assigned readings and unit texts
+with links to **verified, lawful, free** copies on trusted sites (Core Knowledge,
+Project Gutenberg, Folger, Poets.org). These links open on the source site — Strive
+does not re-host them. Items tagged **"Add later"** are commercial or unverified and
+are intentionally **not** linked until a lawful free copy is confirmed. The data
+lives in the `LIBRARY` object in `index.html`. Sourced from a Grade 4–5 link audit.
+
+> Links to third-party sites can rot. Re-check them periodically; a dead link just
+> 404s on the source site, it won't break the dashboard.
+
 ## ⚠️ About the access code
 
 The `ELJEFFE` gate is a **soft, client-side deterrent** — it hides the dashboard
