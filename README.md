@@ -17,6 +17,31 @@ Strive Academy program and **download the full curriculum**.
 
 Open the dashboard and visit **Resources → Curriculum Downloads** to grab any file.
 
+### Rocket Reading Flashcards (Grades 4–5)
+
+On the **Grade 4** and **Grade 5** curriculum pages there's a 🚀 **Rocket Reading
+Flashcards** launcher. It's the full 52-week vocabulary spine (10 words/week, 520
+words/grade) from the Rocket Reading PDFs, built as a spaced-repetition study app:
+
+- **Spaced review (Leitner boxes).** Mark a word **“Got it”** and it's hidden for
+  longer each time (1 → 3 → 7 → 16 → 45 days). **“Review soon”** brings it back this
+  session. Pick a specific week to study, or **“All due now”** to review what's come back.
+- **Word profiles without fabrication.** Each card pulls real pronunciation, part of
+  speech, definition, example, synonyms & antonyms live from the free
+  [Dictionary API](https://dictionaryapi.dev) (no key; cached after first load).
+  Names/multi-word terms fall back to a "write your own / look it up" card.
+- **Student sentence** field saved per word.
+- **Notes & Links** panel (📝 in the flashcard bar): a notepad + saved URL bookmarks,
+  with Export/Import backup.
+
+The word list lives in the `VOCAB` object in `index.html`. Progress, notes, and links
+are stored in `localStorage`.
+
+> ⚠️ **Storage is per-device.** Flashcard progress, the student's sentences, notes, and
+> links are saved in that one browser only — they are **not** uploaded, synced, or shared
+> between devices/students. Use the **Export backup** button to save or move them. True
+> multi-device/multi-student accounts would require a backend (e.g. Supabase).
+
 ### Verified free resource links (Grades 4–5)
 
 The Grade 4 and Grade 5 curriculum pages already list every assigned reading and

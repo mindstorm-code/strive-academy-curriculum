@@ -345,6 +345,63 @@
     padding:9px 15px;border-radius:10px;text-decoration:none;font-family:var(--disp);font-weight:600;font-size:13px;
     background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04111c}
   .dl:hover{filter:brightness(1.08)}
+
+  /* ───── Rocket Reading: launcher card + flashcards + notes ───── */
+  .flashlaunch{display:block;width:100%;text-align:left;cursor:pointer;margin:14px 0 4px;padding:18px 20px;border-radius:16px;
+    border:1px solid var(--line);background:linear-gradient(100deg, rgba(28,203,255,.16), rgba(141,99,255,.16));
+    color:var(--star);font-family:var(--disp);font-weight:700;font-size:18px}
+  .flashlaunch span{display:block;margin-top:4px;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--mute)}
+  .flashlaunch:hover{border-color:var(--cyan);filter:brightness(1.05)}
+
+  .fov{position:fixed;inset:0;z-index:9000;display:none;flex-direction:column;
+    background:linear-gradient(180deg, var(--void), var(--deep) 55%, var(--low));overflow-y:auto}
+  .fov.open{display:flex}
+  .fbar{position:sticky;top:0;display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-soft);
+    background:rgba(9,6,24,.86);backdrop-filter:blur(6px);z-index:2}
+  .fbar h2{font-family:var(--disp);font-size:15px;margin:0;flex:1;color:var(--star)}
+  .fbar .fx,.fbar .fnotesbtn{border:1px solid var(--line);background:transparent;color:var(--mute);border-radius:9px;padding:7px 11px;cursor:pointer;font-family:var(--mono);font-size:12px}
+  .fbar .fx:hover,.fbar .fnotesbtn:hover{color:var(--star);border-color:var(--cyan)}
+  .fwrap{flex:1;display:flex;flex-direction:column;align-items:center;padding:18px;gap:14px}
+  .fctrls{width:min(560px,94vw);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .fctrls select{flex:1;min-width:180px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(5,3,17,.6);color:var(--star);font-family:var(--body);font-size:13px}
+  .fdue{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-soft);white-space:nowrap}
+  .fcard{width:min(560px,94vw);min-height:340px;border-radius:20px;border:1px solid var(--line);
+    background:linear-gradient(180deg, var(--panel-2), var(--panel));box-shadow:0 24px 70px rgba(0,0,0,.45);padding:26px;display:flex;flex-direction:column}
+  .fcard .ftheme{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+  .fcard .fword{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1.1;margin:14px 0 6px;color:var(--star);word-break:break-word}
+  .fcard .fph{font-family:var(--mono);font-size:14px;color:var(--cyan-soft);min-height:18px}
+  .ftap{margin:auto 0 0;text-align:center;color:var(--mute-2);font-size:12.5px;font-family:var(--mono);letter-spacing:.08em}
+  .fprofile{margin-top:8px;display:flex;flex-direction:column;gap:11px;animation:rcf .25s ease}
+  @keyframes rcf{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .fpos{display:flex;gap:6px;flex-wrap:wrap}
+  .fpos .pchip{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-soft);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+  .frow{font-size:14px;color:var(--star)}
+  .frow b{color:var(--mute);font-weight:600;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .frow.ex{font-style:italic;color:var(--mute)}
+  .fsyn{color:var(--green)} .fant{color:var(--gold-soft)}
+  .fmine{width:100%;border-radius:10px;border:1px solid var(--line);background:rgba(5,3,17,.5);color:var(--star);font-family:var(--body);font-size:13.5px;padding:9px 11px;resize:vertical;min-height:46px}
+  .flook{font-size:12px;color:var(--cyan-soft);text-decoration:none}
+  .facts{width:min(560px,94vw);display:flex;gap:12px}
+  .facts button{flex:1;padding:14px;border:0;border-radius:12px;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px}
+  .fagain{background:rgba(231,76,60,.16);color:var(--gold-soft);border:1px solid rgba(231,76,60,.4)!important}
+  .fgot{background:linear-gradient(90deg,var(--green),var(--cyan));color:#04130c}
+  .facts button:hover{filter:brightness(1.07)}
+  .fdone{width:min(560px,94vw);text-align:center;color:var(--mute);padding:40px 10px}
+  .fdone .big{font-family:var(--disp);font-size:24px;color:var(--star);margin-bottom:8px}
+  .ftoast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(9,6,24,.95);border:1px solid var(--line);
+    color:var(--star);padding:10px 16px;border-radius:11px;font-size:13px;z-index:9100;opacity:0;transition:opacity .2s;pointer-events:none}
+  .ftoast.show{opacity:1}
+  /* notes panel */
+  .fnotes{width:min(620px,94vw);margin:0 auto;display:none;flex-direction:column;gap:12px}
+  .fnotes.open{display:flex}
+  .fnotes textarea{width:100%;min-height:160px;border-radius:12px;border:1px solid var(--line);background:rgba(5,3,17,.5);color:var(--star);font-family:var(--body);font-size:14px;padding:12px;resize:vertical}
+  .fnotes .lk{display:flex;gap:8px;align-items:center;padding:9px 12px;border:1px solid var(--line-soft);border-radius:10px;background:rgba(20,11,46,.4);margin-bottom:7px}
+  .fnotes .lk a{flex:1;color:var(--cyan-soft);text-decoration:none;font-size:13px;word-break:break-all}
+  .fnotes .lk button{border:0;background:transparent;color:var(--danger);cursor:pointer;font-size:15px}
+  .fnotes .addrow{display:flex;gap:8px;flex-wrap:wrap}
+  .fnotes .addrow input{flex:1;min-width:140px;padding:9px 11px;border-radius:9px;border:1px solid var(--line);background:rgba(5,3,17,.5);color:var(--star);font-size:13px}
+  .fnotes .addrow button,.fnotes .iobtn{padding:9px 13px;border:0;border-radius:9px;cursor:pointer;font-family:var(--disp);font-weight:600;font-size:13px;background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04111c}
+  .fnotes .hint{font-size:11.5px;color:var(--mute-2)}
 </style>
 
 <div class="shell">
@@ -1357,9 +1414,12 @@ function renderGrade(n){
     <p class="eyebrow">Core Academics · Mission Set ${setno}</p>
     <div class="gradehead"><h1>${title}</h1><span class="band">${BANDS[n]}</span></div>
     <div class="support"><span class="ic">✦</span><div><b>Adaptive support, 1-on-1.</b><p>No pull-out groups. A personal AI tutor meets this cadet at their level — reinforcing or accelerating — while they progress through the same grade-level curriculum below.</p></div></div>
+    ${(n==4||n==5)?`<button class="flashlaunch" data-flash="${n}">🚀 Rocket Reading Flashcards<span>52-week vocabulary spine · spaced review (check off &amp; it won't return for a while) · tap to study the Grade ${n} words</span></button>`:""}
     <div class="grid">${subjects.map(subjectCard).join("")}${ruCardHTML(n)}</div>
     <footer><div class="l"><span class="s">✦</span> Strive for Excellence</div><div class="r">One Lesson · One Mission</div></footer>
   </div>`;
+  const _fb = main.querySelector(".flashlaunch");
+  if(_fb) _fb.addEventListener("click", ()=>openFlashcards(Number(_fb.dataset.flash)));
 }
 
 function countCourses(){let n=0,ap=0;Object.values(SECONDARY.depts).forEach(d=>d.groups.forEach(g=>g.courses.forEach(c=>{n++;if(c.t==="ap")ap++;})));return{n,ap};}
@@ -1993,6 +2053,301 @@ main.addEventListener("click",e=>{
   if(course && (mode==="secondary"||mode==="dept"||mode==="college")){ openCourseModal(course); return; }
   if(mode==="grade"){ const it = e.target.closest("ul.clean li, .chips .chip"); if(it) openResourceModal(it); }
 });
+
+/* ===================== ROCKET READING FLASHCARDS + NOTES ===================== */
+/* 52-week vocabulary spine (10 words/week) from the Grade 4 & 5 Rocket Reading PDFs. */
+const VOCAB = {
+4:[
+[1,"Mission Launch: Academic Success",["academy","cadet","mission","objective","strategy","effort","focus","mastery","reflection","progress"]],
+[2,"Map Skills",["map","compass","cardinal","intermediate","legend","scale","symbol","route","direction","location"]],
+[3,"Latitude, Longitude, and World Mountains",["latitude","longitude","equator","hemisphere","continent","elevation","summit","range","valley","terrain"]],
+[4,"Geology: Earth Structure",["geology","crust","mantle","core","plate","tectonic","fault","pressure","magma","landform"]],
+[5,"Rocks and Minerals",["mineral","rock","igneous","sedimentary","metamorphic","crystal","hardness","luster","erosion","weathering"]],
+[6,"Fossils and Deep Time",["fossil","imprint","preserve","sediment","paleontologist","extinct","evidence","layer","trace","prehistoric"]],
+[7,"Energy",["energy","potential","kinetic","transfer","transform","source","renewable","nonrenewable","fuel","conserve"]],
+[8,"Waves: Sound and Light",["wave","vibration","frequency","amplitude","sound","light","reflect","refract","transparent","opaque"]],
+[9,"Sky Patterns",["orbit","rotate","revolve","axis","phase","constellation","telescope","planet","star","shadow"]],
+[10,"Animals and Biomes",["biome","habitat","ecosystem","adaptation","predator","prey","population","community","climate","survival"]],
+[11,"Circulatory System",["circulatory","heart","artery","vein","capillary","blood","oxygen","pulse","nutrient","transport"]],
+[12,"Respiratory System",["respiratory","lungs","trachea","bronchi","diaphragm","inhale","exhale","carbon dioxide","airway","breathing"]],
+[13,"Medieval Europe",["medieval","feudalism","lord","vassal","serf","manor","castle","monarch","kingdom","noble"]],
+[14,"Knights, Guilds, and Daily Life",["knight","chivalry","armor","squire","apprentice","guild","merchant","craftsman","cathedral","pilgrim"]],
+[15,"Medieval Islamic Empires",["caliph","empire","mosque","scholar","translation","algebra","astronomy","trade","caravan","marketplace"]],
+[16,"Early Russia",["Russia","steppe","czar","Kievan Rus","Moscow","Orthodox","boyar","tsar","fur trade","expansion"]],
+[17,"Feudal Japan",["Japan","samurai","shogun","daimyo","emperor","bushido","honor","archipelago","isolation","clan"]],
+[18,"African Kingdoms",["Ghana","Mali","Songhai","Sahara","savanna","gold","salt","Timbuktu","Mansa Musa","griot"]],
+[19,"Dynasties of China",["dynasty","emperor","mandate","bureaucracy","Confucianism","Great Wall","Silk Road","invention","porcelain","calligraphy"]],
+[20,"China: Trade and Innovation",["commerce","silk","paper","gunpowder","compass","printing","canal","tribute","artisan","innovation"]],
+[21,"American Revolution: Causes",["colony","taxation","parliament","protest","boycott","patriot","loyalist","liberty","representation","rebellion"]],
+[22,"Declaration and Natural Rights",["declaration","independence","unalienable","rights","equality","consent","grievance","tyranny","principle","freedom"]],
+[23,"Revolutionary War",["militia","Continental Army","general","strategy","alliance","battle","victory","defeat","surrender","treaty"]],
+[24,"U.S. Constitution",["constitution","preamble","republic","federal","delegate","compromise","ratify","amendment","union","authority"]],
+[25,"Branches, Rights, and Citizenship",["legislative","executive","judicial","Congress","president","court","citizen","responsibility","justice","checks"]],
+[26,"Early Presidents: Washington",["precedent","cabinet","neutrality","farewell","leadership","virtue","republican","capital","inauguration","unity"]],
+[27,"Early Presidents: Adams, Jefferson, Madison",["diplomacy","purchase","territory","expedition","embargo","war","capital","administration","election","peace"]],
+[28,"American Reformers",["reformer","abolition","temperance","education","suffrage","reform","petition","movement","justice","advocate"]],
+[29,"Robin Hood",["outlaw","sheriff","archer","forest","disguise","loyalty","generosity","justice","legend","merry"]],
+[30,"King Arthur",["quest","knight","round table","Excalibur","Camelot","honor","courage","loyalty","legendary","noble"]],
+[31,"Treasure Island",["treasure","mutiny","pirate","island","map","voyage","crew","captain","danger","scheme"]],
+[32,"Robinson Crusoe",["survival","shipwreck","island","resourceful","shelter","provision","journal","solitude","rescue","civilization"]],
+[33,"The Phantom Tollbooth",["tollbooth","kingdom","rhyme","reason","nonsense","wisdom","curiosity","perspective","journey","imagination"]],
+[34,"Pollyanna",["optimism","gratitude","cheerful","hardship","orphan","attitude","kindness","influence","hope","community"]],
+[35,"Short Stories and Legends",["legend","folktale","myth","hero","dragon","brocade","mountain","sleepy","mysterious","lesson"]],
+[36,"Poetry",["poem","stanza","rhyme","rhythm","imagery","metaphor","simile","speaker","mood","recite"]],
+[37,"Economics: The Miraculous Pencil",["economics","producer","consumer","resource","specialization","supply","demand","trade","price","cooperation"]],
+[38,"Entrepreneurship and Value",["customer","product","service","problem","solution","profit","expense","value","market","advertise"]],
+[39,"Grammar: Parts of Speech",["noun","verb","adjective","adverb","pronoun","preposition","conjunction","interjection","article","modifier"]],
+[40,"Grammar: Sentence Structure",["subject","predicate","phrase","clause","sentence","fragment","compound","complex","punctuation","diagram"]],
+[41,"Writing: Narrative II",["narrative","plot","setting","character","conflict","resolution","dialogue","description","sequence","revision"]],
+[42,"Persuasive Writing",["persuade","claim","reason","evidence","audience","opinion","support","counterargument","conclusion","appeal"]],
+[43,"Research and Animal Report",["research","source","reliable","note","paraphrase","citation","classify","species","trait","behavior"]],
+[44,"Literary Analysis",["theme","motif","symbol","narrator","point of view","inference","context","interpret","compare","contrast"]],
+[45,"Logic and Reasoning",["logic","reasoning","pattern","category","analogy","sequence","deduction","conclusion","valid","fallacy"]],
+[46,"Idioms and Sayings",["idiom","literal","figurative","proverb","expression","prevention","shipshape","warpath","blue moon","haste"]],
+[47,"Art and Music Connections",["composition","melody","rhythm","tempo","chorus","ballad","portrait","landscape","texture","perspective"]],
+[48,"Math Academic Language",["factor","multiple","product","quotient","fraction","decimal","equivalent","perimeter","area","angle"]],
+[49,"Character and Virtue",["integrity","responsibility","discipline","humility","patience","service","resilience","initiative","stewardship","self-control"]],
+[50,"Strive Reflection and Grit",["clarity","energy","necessity","productivity","courage","failure","feedback","improve","ownership","persistence"]],
+[51,"Science Review Mission",["system","model","investigate","observe","measure","variable","data","conclusion","evidence","explain"]],
+[52,"History Review and Mastery Showcase",["chronology","civilization","government","culture","conflict","revolution","reform","citizenship","mastery","showcase"]],
+],
+5:[
+[1,"Launch: 5th Grade Scholar Tools",["summarize","analyze","evidence","infer","context","source","reference","commonplace","thesis","reflection"]],
+[2,"Volume and Measurement Lab",["volume","capacity","dimension","length","width","height","cube","unit","formula","estimate"]],
+[3,"Fractions as Quotients",["fraction","quotient","numerator","denominator","equivalent","multiply","divide","simplify","product","reasonableness"]],
+[4,"Decimal Place Value",["decimal","place value","tenths","hundredths","thousandths","round","compare","operation","standard form","expanded form"]],
+[5,"Coordinate Plane Expedition",["coordinate","axis","origin","quadrant","ordered pair","horizontal","vertical","graph","pattern","data"]],
+[6,"Maya Civilization",["civilization","Maya","city-state","hieroglyph","codex","calendar","astronomy","temple","maize","ritual"]],
+[7,"Aztec Empire",["Aztec","empire","Tenochtitlan","causeway","chinampa","tribute","conquest","emperor","warrior","marketplace"]],
+[8,"Inca Civilization",["Inca","Andes","terrace","quipu","messenger","empire","road system","llama","highland","engineering"]],
+[9,"Age of Exploration",["exploration","voyage","navigator","cartographer","compass","caravel","trade route","expedition","discovery","risk"]],
+[10,"Columbian Exchange",["exchange","crop","livestock","disease","continent","migration","commerce","consequence","encounter","transformation"]],
+[11,"Renaissance Ideas",["Renaissance","humanism","patron","perspective","innovation","manuscript","printing press","classical","artist","scholar"]],
+[12,"England's Golden Age",["monarch","Elizabethan","theater","Shakespeare","sonnet","drama","exploration","religion","parliament","navy"]],
+[13,"Early Russia",["czar","Kremlin","Orthodox","serf","boyar","Siberia","dynasty","autocrat","reform","empire"]],
+[14,"Feudal Japan",["shogun","samurai","daimyo","feudalism","bushido","isolation","archipelago","emperor","clan","honor"]],
+[15,"Westward Expansion",["frontier","territory","pioneer","wagon","migration","trail","settlement","prairie","opportunity","hardship"]],
+[16,"Native Americans and the West",["tribe","nation","reservation","treaty","relocation","culture","homeland","sovereignty","buffalo","conflict"]],
+[17,"Civil War Causes",["sectionalism","slavery","abolition","secession","compromise","states rights","union","confederacy","tension","debate"]],
+[18,"Civil War Battles and Leaders",["battle","strategy","infantry","cavalry","artillery","emancipation","general","campaign","surrender","casualty"]],
+[19,"Reconstruction and Citizenship",["Reconstruction","amendment","citizenship","freedman","rights","segregation","reunite","policy","justice","legacy"]],
+[20,"World Lakes and Water",["lake","basin","freshwater","shoreline","tributary","drainage","Eurasia","Africa","South America","North America"]],
+[21,"United States Geography",["region","state","capital","landform","border","plain","mountain range","river system","coast","resource"]],
+[22,"Latitude and Longitude",["latitude","longitude","equator","prime meridian","hemisphere","degree","grid","coordinate","location","navigation"]],
+[23,"Climate Zones and Time Zones",["climate","weather","zone","arctic","antarctic","temperate","tropical","timezone","rotation","season"]],
+[24,"Reading Maps",["map","scale","legend","symbol","compass rose","elevation","relief","route","distance","orientation"]],
+[25,"Classification of Living Things",["classification","kingdom","species","genus","trait","vertebrate","invertebrate","taxonomy","organism","adaptation"]],
+[26,"Cells",["cell","nucleus","membrane","cytoplasm","organelle","mitochondria","chloroplast","vacuole","tissue","microscope"]],
+[27,"Plants",["photosynthesis","chlorophyll","root","stem","leaf","flower","seed","pollen","stomata","germination"]],
+[28,"Plant Systems and Reproduction",["pollination","fertilization","fruit","seedling","vascular","xylem","phloem","nutrient","transpiration","growth"]],
+[29,"Endocrine System",["endocrine","gland","hormone","pancreas","thyroid","adrenal","pituitary","signal","regulate","balance"]],
+[30,"Earth's Spheres",["geosphere","hydrosphere","atmosphere","biosphere","interaction","system","cycle","erosion","deposition","model"]],
+[31,"Matter",["matter","mass","volume","particle","atom","molecule","solid","liquid","gas","property"]],
+[32,"Physical and Chemical Change",["physical change","chemical change","reactant","product","mixture","solution","dissolve","separate","evidence","reaction"]],
+[33,"Cycling of Matter",["cycle","decomposer","producer","consumer","nutrient","carbon","nitrogen","food web","ecosystem","energy flow"]],
+[34,"Chemistry Foundations",["chemistry","element","compound","periodic table","symbol","bond","acid","base","pH","substance"]],
+[35,"Caddie Woodlawn",["frontier","independent","settler","adventure","responsibility","family","neighbor","courage","mischief","maturity"]],
+[36,"Freedom Crossing",["Underground Railroad","fugitive","abolitionist","freedom","danger","secret","courage","conductor","escape","liberty"]],
+[37,"Sherlock Holmes",["detective","deduction","clue","suspect","evidence","motive","observe","investigate","logical","conclusion"]],
+[38,"Don Quixote",["chivalry","quest","imagination","knight","squire","honor","satire","adventure","idealism","reality"]],
+[39,"A Midsummer Night's Dream",["comedy","dialogue","act","scene","character","conflict","theme","mischief","illusion","resolution"]],
+[40,"Frederick Douglass",["autobiography","enslavement","literacy","liberty","orator","injustice","resistance","dignity","testimony","reform"]],
+[41,"The Secret Garden",["orphan","manor","secret","neglect","healing","friendship","garden","renewal","curiosity","hope"]],
+[42,"Narnia",["wardrobe","allegory","betrayal","sacrifice","courage","kingdom","prophecy","redemption","loyalty","wonder"]],
+[43,"Poetry and Figurative Language",["imagery","metaphor","simile","rhyme","rhythm","stanza","alliteration","speaker","tone","theme"]],
+[44,"Grammar: Sentence Architecture",["noun","verb","adjective","adverb","preposition","pronoun","subject","predicate","clause","phrase"]],
+[45,"Writing: Commonplace and Commonplace Essays",["commonplace","quotation","response","paragraph","topic sentence","supporting detail","transition","revise","edit","conclusion"]],
+[46,"Research: State Report",["state","region","population","economy","industry","natural resource","landmark","government","culture","citation"]],
+[47,"Research: Historical Figure Report",["biography","chronology","achievement","influence","primary source","secondary source","timeline","legacy","character","contribution"]],
+[48,"Economics: Tuttle Twins Show",["entrepreneur","business","customer","profit","expense","revenue","competition","value","investment","service"]],
+[49,"Financial Foundations",["budget","savings","interest","debt","income","spending","needs","wants","risk","stewardship"]],
+[50,"Logic and Literary Analysis",["premise","conclusion","valid","invalid","analogy","category","sequence","pattern","compare","contrast"]],
+[51,"Idioms and Sayings",["eureka","vice versa","eleventh hour","few and far between","read between the lines","well begun","every cloud","count your blessings","chip on your shoulder","take the bull by the horns"]],
+[52,"Final Review: Luminary",["mastery","perseverance","accountability","initiative","integrity","service","wisdom","leadership","kaizen","strive"]],
+],
+};
+
+/* ---- storage + spaced-repetition (Leitner boxes) ---- */
+const _FBOX=[0,1,3,7,16,45], _DAY=86400000;
+const _lsGet=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}};
+const _lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+const fKey=(g,w)=>g+"::"+w;
+const fGetState=()=>_lsGet("striveFlash",{});
+const fRec=(st,g,w)=>st[fKey(g,w)]||{box:0,due:0,mine:""};
+const fDue=(rec)=>!rec||!rec.box||(rec.due||0)<=Date.now();
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+async function fLookup(word){
+  const cache=_lsGet("striveDict",{}), key=word.toLowerCase();
+  if(key in cache) return cache[key];
+  try{
+    const r=await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+encodeURIComponent(word));
+    if(!r.ok){ cache[key]=null; _lsSet("striveDict",cache); return null; }
+    const j=await r.json(), e=j[0]||{};
+    const ph=e.phonetic||((e.phonetics||[]).map(p=>p.text).find(Boolean))||"";
+    const meanings=e.meanings||[]; let syn=[],ant=[];
+    meanings.forEach(m=>{ syn=syn.concat(m.synonyms||[]); ant=ant.concat(m.antonyms||[]); (m.definitions||[]).forEach(d=>{syn=syn.concat(d.synonyms||[]);ant=ant.concat(d.antonyms||[]);}); });
+    const m0=meanings[0]||{}, d0=(m0.definitions||[])[0]||{};
+    const data={ph, pos:[...new Set(meanings.map(m=>m.partOfSpeech).filter(Boolean))], def:d0.definition||"", ex:d0.example||"", syn:[...new Set(syn)].slice(0,6), ant:[...new Set(ant)].slice(0,6)};
+    cache[key]=data; _lsSet("striveDict",cache); return data;
+  }catch(e){ return null; } /* network error: not cached, retries later */
+}
+
+let _fGrade=4,_fScope="due",_fQueue=[],_fCur=null,_fFlipped=false,_ftt;
+const _fEl=()=>document.getElementById("fov");
+
+function _ensureOverlay(){
+  if(_fEl()) return;
+  const o=document.createElement("div"); o.className="fov"; o.id="fov";
+  o.innerHTML=`
+    <div class="fbar">
+      <h2 id="fTitle">Rocket Reading</h2>
+      <button class="fnotesbtn" id="fNotesBtn">📝 Notes &amp; Links</button>
+      <button class="fx" id="fClose">✕ Close</button>
+    </div>
+    <div class="fwrap">
+      <div class="fctrls" id="fCtrls"><select id="fScope"></select><span class="fdue" id="fDueCount"></span></div>
+      <div id="fStage"></div>
+      <div class="facts" id="fActs" style="display:none">
+        <button class="fagain" id="fAgain">↻ Review soon</button>
+        <button class="fgot" id="fGot">✓ Got it</button>
+      </div>
+      <div class="fnotes" id="fNotes"></div>
+    </div>
+    <div class="ftoast" id="fToast"></div>`;
+  document.body.appendChild(o);
+  o.querySelector("#fClose").addEventListener("click",closeFlashcards);
+  o.querySelector("#fScope").addEventListener("change",e=>{_fScope=e.target.value;fBuildQueue();fShowNext();});
+  o.querySelector("#fAgain").addEventListener("click",()=>fAnswer(false));
+  o.querySelector("#fGot").addEventListener("click",()=>fAnswer(true));
+  o.querySelector("#fNotesBtn").addEventListener("click",fToggleNotes);
+  document.addEventListener("keydown",fKeyHandler);
+}
+function fBuildScope(){
+  const sel=document.getElementById("fScope");
+  sel.innerHTML=`<option value="due">★ All due now (spaced review)</option>`+VOCAB[_fGrade].map(([n,t])=>`<option value="w${n}">Week ${n}: ${esc(t)}</option>`).join("");
+  sel.value=_fScope;
+}
+function fBuildQueue(){
+  const st=fGetState(); _fQueue=[];
+  if(_fScope==="due"){ const seen=new Set();
+    VOCAB[_fGrade].forEach(([n,theme,words])=>words.forEach(w=>{ if(!seen.has(w)&&fDue(fRec(st,_fGrade,w))){ seen.add(w); _fQueue.push({w,week:n,theme}); } }));
+  } else { const n=+_fScope.slice(1), row=VOCAB[_fGrade].find(r=>r[0]===n); if(row) row[2].forEach(w=>_fQueue.push({w,week:row[0],theme:row[1]})); }
+}
+function fUpdateDue(){
+  const st=fGetState(); let due=0; const seen=new Set();
+  VOCAB[_fGrade].forEach(([n,t,ws])=>ws.forEach(w=>{ if(!seen.has(w)){ seen.add(w); if(fDue(fRec(st,_fGrade,w))) due++; } }));
+  const el=document.getElementById("fDueCount"); if(el) el.textContent=due+" word"+(due===1?"":"s")+" due";
+}
+function fShowNext(){
+  _fFlipped=false; document.getElementById("fActs").style.display="none";
+  if(!_fQueue.length){ fDone(); fUpdateDue(); return; }
+  _fCur=_fQueue.shift(); fRenderCard(_fCur); fUpdateDue();
+}
+function fRenderCard(it){
+  document.getElementById("fStage").innerHTML=`<div class="fcard" id="fCardEl">
+    <div class="ftheme">Week ${it.week} · ${esc(it.theme)}</div>
+    <div class="fword">${esc(it.w)}</div>
+    <div class="fph" id="fPh"></div>
+    <div id="fBody"></div>
+    <div class="ftap" id="fTap">Tap the card (or press Space) to reveal →</div>
+  </div>`;
+  document.getElementById("fCardEl").addEventListener("click",()=>{ if(!_fFlipped) fFlip(); });
+  it._data=undefined;
+  fLookup(it.w).then(d=>{ it._data=d; const ph=document.getElementById("fPh"); if(ph&&d&&d.ph) ph.textContent=d.ph; if(_fFlipped) fFillProfile(it); });
+}
+function fFlip(){ _fFlipped=true; const t=document.getElementById("fTap"); if(t)t.remove(); fFillProfile(_fCur); document.getElementById("fActs").style.display="flex"; }
+function fFillProfile(it){
+  const body=document.getElementById("fBody"); if(!body) return;
+  const d=it._data, st=fGetState(), rec=fRec(st,_fGrade,it.w);
+  const dictUrl="https://www.dictionary.com/browse/"+encodeURIComponent(it.w.replace(/\s+/g,"-"));
+  let prof;
+  if(d===undefined) prof=`<div class="frow">Looking up the word…</div>`;
+  else if(d) prof=`
+    ${d.pos&&d.pos.length?`<div class="fpos">${d.pos.map(p=>`<span class="pchip">${esc(p)}</span>`).join("")}</div>`:""}
+    ${d.def?`<div class="frow"><b>Meaning</b>${esc(d.def)}</div>`:""}
+    ${d.ex?`<div class="frow ex">“${esc(d.ex)}”</div>`:""}
+    ${d.syn&&d.syn.length?`<div class="frow fsyn"><b>Synonyms</b>${d.syn.map(esc).join(", ")}</div>`:""}
+    ${d.ant&&d.ant.length?`<div class="frow fant"><b>Antonyms</b>${d.ant.map(esc).join(", ")}</div>`:""}`;
+  else prof=`<div class="frow">No dictionary entry found — it may be a name or special term. Write your own meaning below.</div>`;
+  body.innerHTML=`${prof}
+    <div class="frow"><b>My own sentence</b><textarea class="fmine" id="fMine" placeholder="Use “${esc(it.w)}” in your own sentence…">${esc(rec.mine||"")}</textarea></div>
+    <a class="flook" href="${dictUrl}" target="_blank" rel="noopener">Full dictionary entry ↗</a>`;
+  const mine=document.getElementById("fMine");
+  if(mine) mine.addEventListener("input",()=>{ const s=fGetState(); s[fKey(_fGrade,it.w)]=Object.assign(fRec(s,_fGrade,it.w),{mine:mine.value}); _lsSet("striveFlash",s); });
+}
+function fAnswer(known){
+  if(!_fCur) return;
+  const st=fGetState(), k=fKey(_fGrade,_fCur.w), rec=fRec(st,_fGrade,_fCur.w);
+  if(known){ rec.box=Math.min((rec.box||0)+1,5); rec.due=Date.now()+_FBOX[rec.box]*_DAY; const days=_FBOX[rec.box]; fToast(`✓ Got it — won't return for ${days} day${days>1?"s":""}`); }
+  else { rec.box=0; rec.due=Date.now(); _fQueue.push(_fCur); fToast("↻ Saved for review — it'll come back this session"); }
+  st[k]=rec; _lsSet("striveFlash",st); fShowNext();
+}
+function fDone(){
+  document.getElementById("fActs").style.display="none";
+  const where=_fScope==="due"?"all the words due right now":"this week";
+  document.getElementById("fStage").innerHTML=`<div class="fdone"><div class="big">🎉 All caught up!</div><p>You finished ${where}. Words you marked “Got it” are scheduled to return later for spaced review. Pick another week above, or come back tomorrow.</p></div>`;
+}
+/* ---- notes & links ---- */
+function fToggleNotes(){
+  const np=document.getElementById("fNotes"), open=np.classList.toggle("open");
+  document.getElementById("fCtrls").style.display=open?"none":"flex";
+  document.getElementById("fStage").style.display=open?"none":"";
+  document.getElementById("fActs").style.display=(!open&&_fFlipped)?"flex":"none";
+  if(open) fRenderNotes();
+}
+const fNotesData=()=>_lsGet("striveNotes",{text:"",links:[]});
+function fRenderNotes(){
+  const d=fNotesData(), np=document.getElementById("fNotes");
+  np.innerHTML=`
+    <div class="frow"><b>My notes</b></div>
+    <textarea id="fNoteText" placeholder="Type anything to remember — saved on this device.">${esc(d.text||"")}</textarea>
+    <div class="frow"><b>Saved links</b></div>
+    <div id="fLinks">${(d.links||[]).map((l,i)=>`<div class="lk"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title||l.url)}</a><button data-i="${i}" title="Remove">✕</button></div>`).join("")||'<p class="hint">No links saved yet.</p>'}</div>
+    <div class="addrow"><input id="fLinkTitle" placeholder="Label (optional)"><input id="fLinkUrl" placeholder="https://…"><button id="fAddLink">+ Add link</button></div>
+    <div class="addrow"><button class="iobtn" id="fExport">⬇ Export backup</button><button class="iobtn" id="fImport">⬆ Import backup</button></div>
+    <p class="hint">Saved in this browser on this device only — it is not uploaded or shared with others. Use Export to back up your notes, links, and flashcard progress, or to move to another device.</p>`;
+  document.getElementById("fNoteText").addEventListener("input",e=>{ const x=fNotesData(); x.text=e.target.value; _lsSet("striveNotes",x); });
+  document.getElementById("fAddLink").addEventListener("click",()=>{
+    const u=document.getElementById("fLinkUrl").value.trim(); if(!u) return;
+    const t=document.getElementById("fLinkTitle").value.trim();
+    const x=fNotesData(); x.links=x.links||[]; x.links.push({title:t,url:/^https?:\/\//i.test(u)?u:"https://"+u}); _lsSet("striveNotes",x); fRenderNotes();
+  });
+  np.querySelectorAll("#fLinks button").forEach(b=>b.addEventListener("click",()=>{ const x=fNotesData(); x.links.splice(+b.dataset.i,1); _lsSet("striveNotes",x); fRenderNotes(); }));
+  document.getElementById("fExport").addEventListener("click",fExport);
+  document.getElementById("fImport").addEventListener("click",fImport);
+}
+function fExport(){
+  const blob=new Blob([JSON.stringify({flash:fGetState(),notes:fNotesData(),dict:_lsGet("striveDict",{})},null,1)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="strive-rocket-reading-backup.json"; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+}
+function fImport(){
+  const inp=document.createElement("input"); inp.type="file"; inp.accept="application/json";
+  inp.onchange=()=>{ const f=inp.files[0]; if(!f) return; const rd=new FileReader();
+    rd.onload=()=>{ try{ const j=JSON.parse(rd.result); if(j.flash)_lsSet("striveFlash",j.flash); if(j.notes)_lsSet("striveNotes",j.notes); if(j.dict)_lsSet("striveDict",j.dict); fToast("Backup imported ✓"); fRenderNotes(); fUpdateDue(); }catch(e){ fToast("Couldn't read that backup file"); } };
+    rd.readAsText(f); };
+  inp.click();
+}
+function fToast(m){ const t=document.getElementById("fToast"); if(!t)return; t.textContent=m; t.classList.add("show"); clearTimeout(_ftt); _ftt=setTimeout(()=>t.classList.remove("show"),2000); }
+function fKeyHandler(e){
+  const o=_fEl(); if(!o||!o.classList.contains("open")) return;
+  if(/TEXTAREA|INPUT|SELECT/.test((e.target&&e.target.tagName)||"")){ if(e.key==="Escape") closeFlashcards(); return; }
+  if(e.key==="Escape") closeFlashcards();
+  else if((e.key===" "||e.key==="Enter")&&!_fFlipped){ e.preventDefault(); if(_fCur) fFlip(); }
+  else if(_fFlipped&&e.key==="1") fAnswer(false);
+  else if(_fFlipped&&e.key==="2") fAnswer(true);
+}
+function openFlashcards(g){
+  _ensureOverlay(); _fGrade=g;
+  _fScope = Object.keys(fGetState()).length ? "due" : "w1";
+  document.getElementById("fTitle").textContent=`Rocket Reading · Grade ${g} Vocabulary`;
+  document.getElementById("fNotes").classList.remove("open");
+  document.getElementById("fCtrls").style.display="flex";
+  document.getElementById("fStage").style.display="";
+  fBuildScope(); fBuildQueue(); fShowNext(); fUpdateDue();
+  _fEl().classList.add("open"); document.body.style.overflow="hidden";
+}
+function closeFlashcards(){ const o=_fEl(); if(o) o.classList.remove("open"); document.body.style.overflow=""; }
 
 setLevel("primary");
 </script>
